@@ -1,0 +1,87 @@
+@import 'base.sass'
+@import '~bootstrap/scss/bootstrap.scss'
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap')
+
+$primary-color: #86BC42
+$text-color: #49575F
+$font-family: 'Lato', sans-serif
+ 
+html 
+  box-sizing: border-box;
+
+html,
+body 
+  margin: 0
+  padding: 0
+  height: 100%
+  font-family: $font-family !important
+
+*,
+*:before,
+*:after 
+  box-sizing: inherit
+
+a
+  color: $primary-color
+
+  &:hover
+    color: $primary-color
+
+
+.btn-primary
+ background-color: $primary-color
+ cursor:pointer
+ 
+ &:hover
+   background-color: #242C42
+
+
+header 
+  background-color:  #FFF
+  box-shadow: 3px 0 8px rgba(0,0,0,0.3)
+  
+  
+  
+  .navbar.brand 
+    color: $primary-color ! important
+     font-family: $font-family
+  
+  .navlink 
+    color: $text-color 
+    font-family: $font-family
+    text-transform: uppercase
+     
+    &:hover
+      color: $primary-color
+  
+  .active
+     color: $primary-color
+     font-weight: bold
+
+  .navbar-collapse
+    flex-basic: 100%
+    @media (min-witdh: 992px)
+      flex-basic:auto
+
+
+.home-container 
+  background-image: url('images/indir.jpg') 
+  height: 600px
+  background-size: cover
+
+  form
+   witdh: 516px
+   margin: 50px auto 5px auto
+
+  p
+   text-aligin:center
+   margin-top: 40px
+   font-size: 18px
+
+  h1 
+    text-aligin: center
+    color: $text-color
+    font-family: $font-family
+    text-transform: uppercase
+    
