@@ -1,0 +1,34 @@
+
+
+header {
+  background-color:#0984e3;
+
+}
+
+.header.navbar-collapse {
+  
+  flex-basis: 100%;
+  @media screen {min-width: 992px; 
+    
+  }
+  flex-basis: auto;
+}
+
+header.navbar.brand {
+  color: rgb(209, 49, 49);
+  
+}
+header.navlink {
+  color: azure;
+
+  
+}
+.page-layout__viewport {
+  padding-top: 4rem;
+}
+
+.page-layout__nav-item--active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
