@@ -14,7 +14,7 @@ class AuthViem extends Component {
     constructor(){
         super();
         this.state ={
-             currentViem : 1
+             currentViem : 2
         }
     }
    

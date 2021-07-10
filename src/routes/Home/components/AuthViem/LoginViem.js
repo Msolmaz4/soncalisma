@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {post} from 'utils/http.helper.js';
 
 import { userInit } from 'store/userReducer';
+import { browserHistory} from 'react';
 
 class LoginViem extends React.Component {
 
@@ -32,11 +34,21 @@ class LoginViem extends React.Component {
         // HTPP Call
         console.log(this.state);
         const user = {
-            name: "melih babs",
-            emsil: "dskj@iy",
-            age: 33,
+            email: this.state.email,
+            password : this.state.password
         }
-        this.props.loginUserData(user);
+        post('auth/login',user).then(res=>{
+            if(res.status){
+                localStorage.setItem('userToken',res.token);
+                this.props.userInit({email:user.email});
+                //redirect dashboard
+                browserHistory.push('/app');
+            }else{
+                alert(res.message);
+            }
+
+        });
+        
     }
 
     render() {
@@ -99,7 +111,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
 
-        loginUserData: (user) => dispatch(userInit(user))
+        userInit: (user) => dispatch(userInit(user))
 
     }
 }
